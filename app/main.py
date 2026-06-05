@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.database import init_db
-from app.routers import deployments, usage
+from app.routers import completions, deployments, usage
 
 
 @asynccontextmanager
@@ -23,4 +23,5 @@ app = FastAPI(
 )
 
 app.include_router(deployments.router)
+app.include_router(completions.router)
 app.include_router(usage.router)
